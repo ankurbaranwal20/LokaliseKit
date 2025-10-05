@@ -4,6 +4,11 @@
 
 import Foundation
 
+internal struct LokaliseKitConfig {
+    static let supportedLanguages: Set<String> = ["en","ar"] // Add all languages you support
+    public static let defaultLanguage = "en"
+}
+
 internal final class LocalizationViewModel {
     
     private let service: LokalizationService

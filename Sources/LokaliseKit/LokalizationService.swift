@@ -21,9 +21,10 @@ final class LokalizationService {
         fail: @escaping (_ error: NSError) -> Void
     ) {
         LocalizableBundleManager.shared.currentLanguage = currentLanguageCode
-        LokaliseKit.log("Starting localization fetch. lang=\(currentLanguageCode), url=\(urlString)")
-        guard let url = URL(string: urlString) else {
-            LokaliseKit.log("Invalid URL: \(urlString)")
+        let urlWithLanguage = "\(urlString)/\(currentLanguageCode).json"
+        LokaliseKit.log("Starting localization fetch. lang=\(currentLanguageCode), url=\(urlWithLanguage)")
+        guard let url = URL(string: urlWithLanguage) else {
+            LokaliseKit.log("Invalid URL: \(urlWithLanguage)")
             fail(NSError(domain: "InvalidURL", code: -1))
             return
         }
