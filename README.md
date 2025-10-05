@@ -39,8 +39,7 @@ LokaliseKit.initialize(urlString: "https://example.com/en.json", languageCode: "
 
 ## API Surface
 - `LokaliseKit.initialize(urlString:languageCode:completion:)`
-- `String.localized(...)`
-- `String.localizedFormatted(...)`
+- `String.localized()`
 
 ## Notes
 - Call initialize once per language or on app launch as needed.
