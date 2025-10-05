@@ -4,7 +4,7 @@
 
 import Foundation
 
-class LocalizationViewModel {
+internal final class LocalizationViewModel {
     
     private let service: LokalizationService
     
