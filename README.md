@@ -32,16 +32,6 @@ LokaliseKit.initialize(urlString: "https://example.com/en.json", languageCode: "
 }
 ```
 
-### Or use the ViewModel directly
-```swift
-import LokaliseKit
-
-let vm = LocalizationViewModel()
-vm.getLocalizationData(urlString: "https://example.com/en.json", currentLanguageCode: "en") {
-    print("general_history_trans_undefined".localized())
-}
-```
-
 ### Formatting placeholders
 ```swift
 // If your server value contains %s or [%s], they will be normalized to %@
@@ -56,7 +46,6 @@ print("items_count".localizedFormatted(3) ?? "")
 
 ## API Surface
 - `LokaliseKit.initialize(urlString:languageCode:completion:)`
-- `LocalizationViewModel.getLocalizationData(urlString:currentLanguageCode:completion:)`
 - `String.localized(...)`
 - `String.localizedFormatted(...)`
 
@@ -64,6 +53,7 @@ print("items_count".localizedFormatted(3) ?? "")
 - Call initialize once per language or on app launch as needed.
 - Keep your app’s local `Localizable.strings` files for fallback translations.
 - If your endpoint needs headers (e.g., API token), extend `LokalizationService` to set them on the URLRequest.
+ - The internal ViewModel and services are not part of the public API. Use only `LokaliseKit.initialize(...)`.
 
 ## License
 MIT (add your preferred license here)
