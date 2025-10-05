@@ -31,13 +31,6 @@ LokaliseKit.initialize(urlString: "https://example.com/en.json", languageCode: "
     print("welcome_title".localized())
 }
 ```
-
-### Formatting placeholders
-```swift
-// If your server value contains %s or [%s], they will be normalized to %@
-print("items_count".localizedFormatted(3) ?? "")
-```
-
 ## How it works
 - Downloads your JSON and decodes it to `LocalizationModel`.
 - Writes strings/plurals into `Documents/LokaliseDynamic.bundle/<lang>.lproj/`.
